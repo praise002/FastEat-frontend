@@ -1,0 +1,3 @@
+@tailwind base; /* normalize or reset browsers styles */
+@tailwind components; /* tailwind’s component classes (like buttons, cards, etc) */
+@tailwind utilities;  /* Tailwind’s utility classes (like margin, padding, flexbox, etc.) */
