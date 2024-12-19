@@ -2,5 +2,5 @@ node_modules
 package.json
 package-lock.json
 tailwind.config.js
-output.css
+css/output.css
 note.txt

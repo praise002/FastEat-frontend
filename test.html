@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+            rel="stylesheet"
+        />
+        <link href="./output.css" rel="stylesheet" />
+        <title>FastEat</title>
+    </head>
+    <body>
+        <!-- Backdrop overlay -->
+        <div
+            id="drawer-backdrop"
+            class="fixed inset-0 bg-black/50 hidden z-40"
+        ></div>
+        <!-- Drawer component -->
+        <div
+            id="drawer-navigation"
+            class="fixed sm:max-2xl:top-0 sm:max-2xl:right-0 z-50 shadow-[0_8px_24px_rgba(149,157,165,0.2)] sm:max-2xl:w-64 w-full h-screen p-6 overflow-y-auto transition-transform translate-x-full bg-white"
+            tabindex="-1"
+            aria-labelledby="drawer-navigation-label"
+        >
+            <h5
+                id="drawer-navigation-label"
+                class="text-base font-semibold text-gray-500 uppercase"
+            >
+                Categories
+            </h5>
+            <button
+                type="button"
+                data-drawer-hide="drawer-navigation"
+                aria-controls="drawer-navigation"
+                id="drawer-close"
+                class="text-white bg-orange-600 hover:bg-black rounded-full text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center transition-colors duration-200"
+            >
+                <svg
+                    aria-hidden="true"
+                    class="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                    ></path>
+                </svg>
+                <span class="sr-only">Close menu</span>
+            </button>
+            <div class="py-4 overflow-y-auto">
+                <ul class="space-y-2 font-medium">
+                    <li class="border-b border-zinc-200">
+                        <a
+                            href="#"
+                            class="block py-2 text-gray-900 hover:text-orange-600 transition-colors duration-200"
+                        >
+                            Beef
+                        </a>
+                    </li>
+                    <li class="border-b border-zinc-200">
+                        <a
+                            href="#"
+                            class="block py-2 text-gray-900 hover:text-orange-600 transition-colors duration-200"
+                        >
+                            Chicken
+                        </a>
+                    </li>
+                    <li class="border-b border-zinc-200">
+                        <a
+                            href="#"
+                            class="block py-2 text-gray-900 hover:text-orange-600 transition-colors duration-200"
+                        >
+                            Pork
+                        </a>
+                    </li>
+                    <!-- Add more menu items as needed -->
+                </ul>
+            </div>
+        </div>
+        <main class="font-bold text-white bg-gray-50">
+            <nav class="text-2xl p-5 bg-orange-600">
+                <ul class="flex items-center justify-between">
+                    <li class="flex items-center justify-between">
+                        <a href="index.html" class=""
+                            ><svg
+                                stroke="currentColor"
+                                fill="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                height="1em"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path
+                                    d="M12 3L4 9v12h16V9l-8-6zm.5 9.5c0 .83-.67 1.5-1.5 1.5v4h-1v-4c-.83 0-1.5-.67-1.5-1.5v-3h1v3h.5v-3h1v3h.5v-3h1v3zM15 18h-1v-3.5h-1v-3c0-1.1.9-2 2-2V18z"
+                                ></path></svg
+                        ></a>
+                        <a href="index.html" class="ml-2">FastEat.</a>
+                    </li>
+
+                    <li>
+                        <button id="drawer-toggle">
+                            <svg
+                                stroke="currentColor"
+                                fill="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 512 512"
+                                height="27"
+                                width="27"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"
+                                ></path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+        <script>
+            const drawer = document.getElementById("drawer-navigation");
+            const backdrop = document.getElementById("drawer-backdrop");
+            const toggleBtn = document.getElementById("drawer-toggle");
+            const closeBtn = document.getElementById("drawer-close");
+
+            function openDrawer() {
+                drawer.classList.remove("translate-x-full");
+                backdrop.classList.remove("hidden");
+            }
+
+            function closeDrawer() {
+                drawer.classList.add("translate-x-full");
+                backdrop.classList.add("hidden");
+            }
+
+            toggleBtn.addEventListener("click", openDrawer);
+            closeBtn.addEventListener("click", closeDrawer);
+            backdrop.addEventListener("click", closeDrawer);
+        </script>
+    </body>
+</html>
