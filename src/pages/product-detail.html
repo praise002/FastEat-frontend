@@ -1,298 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-            rel="stylesheet"
-        />
-        <link href="./output.css" rel="stylesheet" />
-        <title>FastEat</title>
-    </head>
-    <body>
-        <main class="font-bold text-white bg-gray-50">
-            <nav class="text-2xl p-5 bg-orange-600">
-                <ul class="flex items-center justify-between">
-                    <li class="flex items-center justify-between">
-                        <a href="index.html" class=""
-                            ><svg
-                                stroke="currentColor"
-                                fill="currentColor"
-                                stroke-width="0"
-                                viewBox="0 0 24 24"
-                                height="1em"
-                                width="1em"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path fill="none" d="M0 0h24v24H0z"></path>
-                                <path
-                                    d="M12 3L4 9v12h16V9l-8-6zm.5 9.5c0 .83-.67 1.5-1.5 1.5v4h-1v-4c-.83 0-1.5-.67-1.5-1.5v-3h1v3h.5v-3h1v3h.5v-3h1v3zM15 18h-1v-3.5h-1v-3c0-1.1.9-2 2-2V18z"
-                                ></path></svg
-                        ></a>
-                        <a href="index.html" class="ml-2">FastEat.</a>
-                    </li>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+    <link href="/assets/css/output.css" rel="stylesheet" />
+    <script defer src="/assets/js/drawer.js"></script>
+    <title>FastEat</title>
+</head>
+<body>
+    <!-- Backdrop overlay -->
+    <div id="drawer-backdrop" class="fixed inset-0 bg-black/50 hidden z-40"></div>
+    <!-- Drawer component -->
+    <div id="drawer-navigation"
+        class="fixed sm:top-0 sm:right-0 z-50 shadow-[0_8px_24px_rgba(149,157,165,0.2)] sm:w-64 w-full h-screen p-6 overflow-y-auto transition-transform translate-x-full bg-white"
+        tabindex="-1" aria-labelledby="drawer-navigation-label">
+        <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase">
+            Categories
+        </h5>
+        <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" id="drawer-close"
+            class="text-white bg-orange-600 hover:bg-black rounded-full text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center transition-colors duration-200">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Close menu</span>
+        </button>
+        <div class="py-4 overflow-y-auto">
+            <ul class="space-y-2 font-medium">
+                <li class="border-b border-zinc-200">
+                    <a href="#" class="block py-2 text-gray-900 hover:text-orange-600 transition-colors duration-200">
+                        Beef
+                    </a>
+                </li>
+                <li class="border-b border-zinc-200">
+                    <a href="#" class="block py-2 text-gray-900 hover:text-orange-600 transition-colors duration-200">
+                        Chicken
+                    </a>
+                </li>
+                <li class="border-b border-zinc-200">
+                    <a href="#" class="block py-2 text-gray-900 hover:text-orange-600 transition-colors duration-200">
+                        Pork
+                    </a>
+                </li>
+                <!-- Add more menu items as needed -->
+            </ul>
+        </div>
+    </div>
 
-                    <li>
-                        <a href="#"
-                            ><svg
-                                stroke="currentColor"
-                                fill="currentColor"
-                                stroke-width="0"
-                                viewBox="0 0 512 512"
-                                height="27"
-                                width="27"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"
-                                ></path></svg
-                        ></a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="relative h-96">
-                <div
-                    class="absolute inset-0 bg-cover bg-center"
-                    style="
-                        background-image: linear-gradient(
-                                rgba(0, 0, 0, 0.6),
-                                rgba(0, 0, 0, 0.7)
-                            ),
-                            url('/assets/images/header_image.jpg');
-                    "
-                ></div>
-                <div
-                    class="relative h-full flex items-center justify-center flex-col"
-                >
-                    <form action="" class="items-center flex">
+    <header class="bg-orange-600 text-white font-bold">
+        <nav class="text-2xl p-4" aria-label="Main navigation">
+            <ul class="flex items-center justify-between">
+                <li class="flex items-center justify-between gap-2">
+                    <a href="index.html"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                            viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path
+                                d="M12 3L4 9v12h16V9l-8-6zm.5 9.5c0 .83-.67 1.5-1.5 1.5v4h-1v-4c-.83 0-1.5-.67-1.5-1.5v-3h1v3h.5v-3h1v3h.5v-3h1v3zM15 18h-1v-3.5h-1v-3c0-1.1.9-2 2-2V18z">
+                            </path>
+                        </svg></a>
+                    <a href="index.html">FastEat.</a>
+                </li>
+
+                <li class="flex items-center justify-between">
+                    <button id="drawer-toggle">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                            height="27" width="27" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z">
+                            </path>
+                        </svg>
+                    </button>
+
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="font-bold text-white bg-slate-100 overflow-x-hidden pb-8">
+
+        <section aria-label="Search section">
+            <div class="relative h-96 w-full">
+                <div class="absolute inset-0 bg-cover bg-center w-full" style="
+                            background-image: linear-gradient(
+                                    rgba(0, 0, 0, 0.6),
+                                    rgba(0, 0, 0, 0.7)
+                                ),
+                                url('/assets/images/header_image.jpg');
+                        "></div>
+                <div class="relative h-full flex items-center justify-center flex-col px-4">
+                    <form class="items-center flex">
                         <input
-                            class="text-gray-700 px-5 sm:max-2xl:px-14 sm:max-2xl:mr-4 mr-1 outline-none sm:max-2xl:w-auto w-1 min-w-80 h-12 sm:max-2xl:h-16 rounded-full font-normal text-lg sm:max-2xl:text-xl"
-                            type="search"
-                            placeholder="Search recipes here..."
-                            autofocus
-                        />
+                            class="text-gray-700 px-5 sm:px-14 sm:mr-4 mr-1 outline-none sm:w-auto w-1 min-w-80 h-12 sm:h-16 rounded-full font-normal text-lg sm:text-xl"
+                            type="search" placeholder="Search recipes here..." autofocus />
                         <button
-                            class="bg-orange-600 sm:max-2xl:p-6 p-3 rounded-full hover:text-orange-600 hover:bg-white transition-colors duration-300 hover:scale-110"
-                        >
-                            <svg
-                                stroke="currentColor"
-                                fill="currentColor"
-                                stroke-width="0"
-                                viewBox="0 0 16 16"
-                                class="btn-icon"
-                                height="20"
-                                width="20"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
+                            class="bg-orange-600 sm:p-5 p-3 rounded-full hover:text-orange-600 hover:bg-white transition-colors duration-300 hover:scale-110">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"
+                                class="btn-icon" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
                                 <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                                ></path>
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                                </path>
                             </svg>
                         </button>
                     </form>
                     <div class="tracking-wider">
-                        <h1 class="text-xl sm:max-2xl:text-4xl my-5">
+                        <h1 class="text-xl sm:text-4xl my-5">
                             What are your favorite cuisines?
                         </h1>
-                        <p
-                            class="font-semibold text-sm sm:max-2xl:text-xl uppercase text-center"
-                        >
+                        <p class="font-semibold text-sm sm:text-xl uppercase text-center">
                             Personalize your experience
                         </p>
                     </div>
                 </div>
             </div>
-            <div
-                class="bg-orange-600 my-20 mx-7 flex ps-5 py-7 items-center text-lg"
-            >
-                <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 1024 1024"
-                    height="22"
-                    width="22"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
+        </section>
+        <section>
+            <div class="bg-orange-600 my-20 mx-7 flex ps-5 py-7 items-center text-lg">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="22"
+                    width="22" xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3 0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8 24.9-25 24.9-65.5-.1-90.5z"
-                    ></path>
+                        d="M946.5 505L534.6 93.4a31.93 31.93 0 0 0-45.2 0L77.5 505c-12 12-18.8 28.3-18.8 45.3 0 35.3 28.7 64 64 64h43.4V908c0 17.7 14.3 32 32 32H448V716h112v224h265.9c17.7 0 32-14.3 32-32V614.3h43.4c17 0 33.3-6.7 45.3-18.8 24.9-25 24.9-65.5-.1-90.5z">
+                    </path>
                 </svg>
-                <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 24 24"
-                    height="23"
-                    width="23"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M10.296 7.71 14.621 12l-4.325 4.29 1.408 1.42L17.461 12l-5.757-5.71z"
-                    ></path>
-                    <path
-                        d="M6.704 6.29 5.296 7.71 9.621 12l-4.325 4.29 1.408 1.42L12.461 12z"
-                    ></path>
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="23"
+                    width="23" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.296 7.71 14.621 12l-4.325 4.29 1.408 1.42L17.461 12l-5.757-5.71z"></path>
+                    <path d="M6.704 6.29 5.296 7.71 9.621 12l-4.325 4.29 1.408 1.42L12.461 12z"></path>
                 </svg>
                 <p class="uppercase font-normal">Beef and Oyster Pie</p>
             </div>
+        </section>
+        <section aria-label="Meal section">
             <div class="px-7 mb-20 tracking-wider">
                 <h1
-                    class="text-3xl uppercase text-black relative after:content-[''] after:absolute after:top-full after:left-0 after:h-1 after:bg-orange-600 after:w-20"
-                >
+                    class="text-3xl uppercase text-black relative after:content-[''] after:absolute after:top-full after:left-0 after:h-1 after:bg-orange-600 after:w-20">
                     Meal Details
                 </h1>
             </div>
-            <div class="bg-white p-12">
-                <div
-                    class="grid grid-cols-1 md:max-2xl:grid-cols-2 md:max-2xl:gap-10"
-                >
+            <div class="bg-white p-12 mx-5 shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]">
+                <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
                     <div class="max-w-2xl">
-                        <img
-                            class="w-full h-full"
-                            src="/assets/images/img-6.jpg"
-                            alt=""
-                        />
+                        <img class="w-full h-full" src="/assets/images/img-6.jpg" alt="" />
                     </div>
 
                     <div class="px-6 py-8">
                         <div class="text-black">
-                            <h3
-                                class="text-orange-600 text-2xl py-3 border-b border-b-orange-600"
-                            >
+                            <h3 class="text-orange-600 text-2xl py-3 border-b border-b-orange-600">
                                 Beef and Oyster pie
                             </h3>
-                            <div
-                                class="flex items-center uppercase tracking-widest mb-2 pt-10"
-                            >
+                            <div class="flex items-center uppercase tracking-widest mb-2 pt-10">
                                 <span class="mr-2">Category:</span>
                                 <span class="font-normal">Beef</span>
                             </div>
                             <div class="flex items-center tracking-widest mb-2">
                                 <span class="mr-2 uppercase">Source:</span>
-                                <a
-                                    class="font-normal hover:text-orange-600 transition-colors duration-300"
-                                    href="https://www.bbc.co.uk/food/recipes/beef_and_oyster_pie_65230"
-                                    >https://www.bbc.co.uk/food/recipes/beef_...</a
-                                >
+                                <a class="font-normal hover:text-orange-600 transition-colors duration-300"
+                                    href="https://www.bbc.co.uk/food/recipes/beef_and_oyster_pie_65230">Beef</a>
                             </div>
                             <div class="mb-10">
                                 <span class="mr-2">Tags:</span>
-                                <span
-                                    class="border border-orange-600 px-2 py-1 rounded-md"
-                                    >Pie</span
-                                >
+                                <span class="border border-orange-600 px-2 py-1 rounded-md">Pie</span>
                             </div>
                         </div>
                         <div class="bg-orange-600 p-4">
                             <h6 class="my-3">Ingredients</h6>
-                            <ul class="grid grid-cols-3 font-normal">
+                            <ul class="grid grid-cols-2 sm:grid-cols-3 font-normal xs:grid-cols-1">
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >1</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">1</span>
                                     <span>Beef</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >2</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">2</span>
                                     <span>Olive Oil</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >3</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">3</span>
                                     <span>Shallots</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >4</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">4</span>
                                     <span>Garlic</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >5</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">5</span>
                                     <span>Bacon</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >6</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">6</span>
                                     <span>Thyme</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >7</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">7</span>
                                     <span>Bay Leaf</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >8</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">8</span>
                                     <span>Stout</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >9</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">9</span>
                                     <span>Beef Stock</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >10</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">10</span>
                                     <span>Corn Flour</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >11</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">11</span>
                                     <span>Oysters</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >12</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">12</span>
                                     <span>Plain Flour</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >13</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">13</span>
                                     <span>Salt</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >14</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">14</span>
                                     <span>Butter</span>
                                 </li>
                                 <li class="flex items-center mb-2">
                                     <span
-                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center"
-                                        >15</span
-                                    >
+                                        class="mr-2 bg-custom h-5 w-5 border shadow-[0_1px_1px_rgba(0,0,0,0.09)] border-white border-solid rounded-full inline-flex items-center justify-center">15</span>
                                     <span>Eggs</span>
                                 </li>
                             </ul>
@@ -302,220 +253,135 @@
                 <div class="m-20 text-black mx-auto">
                     <h6>Measure:</h6>
                     <ul
-                        class="grid grid-cols-1 sm:max-2xl:grid-cols-2 min-w-[280px] border bg-gray-50 border-solid my-3 p-6 space-y-2"
-                    >
+                        class="grid grid-cols-1 sm:grid-cols-2 min-w-[280px] border bg-gray-50 border-solid my-3 p-6 space-y-2">
                         <li class="inline-flex items-center font-medium">
                             <span class="text-orange-600 mr-2">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span> goog </span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>1 tbs chopped</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>400ml</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>400g</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>250g</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>3 tbs</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>125g</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>330ml</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>2 tbs</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>pinch</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>To Glaze</span>
                         </li>
                         <li class="inline-flex items-center font-medium">
                             <span class="mr-2 text-orange-600">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 512 512"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z"
-                                    ></path>
+                                        d="M480.1 31.9c-55-55.1-164.9-34.5-227.8 28.5-49.3 49.3-55.1 110-28.8 160.4L9 413.2c-11.6 10.5-12.1 28.5-1 39.5L59.3 504c11 11 29.1 10.5 39.5-1.1l192.4-214.4c50.4 26.3 111.1 20.5 160.4-28.8 63-62.9 83.6-172.8 28.5-227.8z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>To Glaze</span>
@@ -527,22 +393,15 @@
                     <ul class="space-y-2 mt-4 font-medium">
                         <li class="inline-flex">
                             <span class="text-orange-600 mr-2">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 1024 1024"
-                                    class="text-orange li-icon"
-                                    height="18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    class="text-orange li-icon" height="18" width="18"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z"
-                                    ></path>
+                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z">
+                                    </path>
                                     <path
-                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
-                                    ></path>
+                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>
@@ -557,22 +416,15 @@
                         </li>
                         <li class="inline-flex">
                             <span class="text-orange-600 mr-2">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 1024 1024"
-                                    class="text-orange li-icon"
-                                    height="18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    class="text-orange li-icon" height="18" width="18"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z"
-                                    ></path>
+                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z">
+                                    </path>
                                     <path
-                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
-                                    ></path>
+                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>
@@ -586,44 +438,30 @@
                         </li>
                         <li class="inline-flex">
                             <span class="text-orange-600 mr-2">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 1024 1024"
-                                    class="text-orange li-icon"
-                                    height="18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    class="text-orange li-icon" height="18" width="18"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z"
-                                    ></path>
+                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z">
+                                    </path>
                                     <path
-                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
-                                    ></path>
+                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>Preheat the oven to 180C/350F/Gas 4.</span>
                         </li>
                         <li class="inline-flex">
                             <span class="text-orange-600 mr-2">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 1024 1024"
-                                    class="text-orange li-icon"
-                                    height="18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    class="text-orange li-icon" height="18" width="18"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z"
-                                    ></path>
+                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z">
+                                    </path>
                                     <path
-                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
-                                    ></path>
+                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>
@@ -638,22 +476,15 @@
                         </li>
                         <li class="inline-flex">
                             <span class="text-orange-600 mr-2">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 1024 1024"
-                                    class="text-orange li-icon"
-                                    height="18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    class="text-orange li-icon" height="18" width="18"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z"
-                                    ></path>
+                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z">
+                                    </path>
                                     <path
-                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
-                                    ></path>
+                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>
@@ -667,22 +498,15 @@
                         </li>
                         <li class="inline-flex">
                             <span class="text-orange-600 mr-2">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 1024 1024"
-                                    class="text-orange li-icon"
-                                    height="18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    class="text-orange li-icon" height="18" width="18"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z"
-                                    ></path>
+                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z">
+                                    </path>
                                     <path
-                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
-                                    ></path>
+                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>
@@ -699,22 +523,15 @@
                         </li>
                         <li class="inline-flex">
                             <span class="text-orange-600 mr-2">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 1024 1024"
-                                    class="text-orange li-icon"
-                                    height="18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    class="text-orange li-icon" height="18" width="18"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z"
-                                    ></path>
+                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z">
+                                    </path>
                                     <path
-                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
-                                    ></path>
+                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>
@@ -727,22 +544,15 @@
                         </li>
                         <li class="inline-flex">
                             <span class="text-orange-600 mr-2">
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    stroke-width="0"
-                                    viewBox="0 0 1024 1024"
-                                    class="text-orange li-icon"
-                                    height="18"
-                                    width="18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
+                                    class="text-orange li-icon" height="18" width="18"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z"
-                                    ></path>
+                                        d="M433.1 657.7a31.8 31.8 0 0 0 51.7 0l210.6-292c3.8-5.3 0-12.7-6.5-12.7H642c-10.2 0-19.9 4.9-25.9 13.3L459 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H315c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8z">
+                                    </path>
                                     <path
-                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"
-                                    ></path>
+                                        d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z">
+                                    </path>
                                 </svg>
                             </span>
                             <span>
@@ -758,255 +568,208 @@
                     </ul>
                 </div>
             </div>
-            <div class="mt-20 text-2xl sm:max-2xl:text-3xl px-7">
+        </section>
+        <section aria-label="Category section">
+            <div class="mt-20 text-2xl sm:text-3xl px-7">
                 <h1
-                    class="uppercase mb-20 text-black relative after:content-[''] after:absolute after:top-full after:left-0 after:h-1 after:bg-orange-600 after:w-20"
-                >
+                    class="uppercase mb-20 text-black relative after:content-[''] after:absolute after:top-full after:left-0 after:h-1 after:bg-orange-600 after:w-20">
                     Categories
                 </h1>
 
-                <div
-                    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:grid-cols-2"
-                >
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/dessert.png"
-                            alt=""
-                        />
+                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:grid-cols-2">
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/dessert.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/side.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/side.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Chicken
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/miscellaneous.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/miscellaneous.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Dessert
                             </h3>
                         </div>
                     </div>
 
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/dessert.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/dessert.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/side.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/side.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Chicken
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/miscellaneous.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/miscellaneous.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Dessert
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/dessert.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/dessert.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/side.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/side.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/miscellaneous.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/miscellaneous.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/dessert.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/dessert.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/side.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/side.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/miscellaneous.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/miscellaneous.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/dessert.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300" loading="lazy"
+                            src="/assets/images/dessert.png" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img class="p-3" src="/assets/images/side.png" alt="" />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3" src="/assets/images/side.png" loading="lazy" alt="" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
-                    <div
-                        class="relative bg-white h-full w-full flex items-center justify-center"
-                    >
-                        <img
-                            class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
-                            src="/assets/images/miscellaneous.png"
-                            alt=""
-                        />
+                    <div class="relative bg-white h-full w-full flex items-center justify-center">
+                        <img class="p-3 hover:scale-90 transition-all ease-in-out duration-300"
+                            src="/assets/images/miscellaneous.png" alt="" loading="lazy" />
                         <div>
-                            <h3
-                                class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase"
-                            >
+                            <h3 class="absolute top-1 right-1 rounded bg-orange-600 py-1 px-2 text-sm uppercase">
                                 Beef
                             </h3>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
-    </body>
+        </section>
+    </main>
+    <footer class="bg-orange-600 text-white">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- About Section -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">About FastEat</h4>
+                    <p class="text-sm">Discover and share delicious recipes from around the world. Your go-to platform
+                        for culinary inspiration.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-orange-200">Popular Recipes</a></li>
+                        <li><a href="#" class="hover:text-orange-200">Submit Recipe</a></li>
+                        <li><a href="#" class="hover:text-orange-200">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-orange-200">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-orange-200">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-orange-200">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-orange-500 mt-8 pt-8 text-sm text-center">
+                <p>&copy; 2024 FastEat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
