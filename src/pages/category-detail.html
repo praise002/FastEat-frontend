@@ -10,6 +10,7 @@
         rel="stylesheet" />
     <link href="/assets/css/output.css" rel="stylesheet" />
     <script defer src="/assets/js/drawer.js"></script>
+    <script defer src="/assets/js/category-detail.js"></script>
     <title>FastEat</title>
 </head>
 <body>
@@ -119,16 +120,8 @@
                 </div>
             </div>
         </section>
-        <section aria-label="Category description section">
-            <div class="my-9 mx-5 border p-7 border-orange-600">
-                <h2 class="text-orange-600 font-bold text-2xl">Beef</h2>
-                <p class="text-black mt-4 opacity-50 text-[18px] font-medium leading-8">
-                    Beef is the culinary name for meat from cattle, particularly
-                    skeletal muscle. Humans have been eating beef since
-                    prehistoric times.[1] Beef is a source of high-quality
-                    protein and essential nutrients.[2]
-                </p>
-            </div>
+        <section id="category-description" aria-label="Category description section">
+            
         </section>
         <section aria-label="Meals section">
             <div class="mt-20 text-2xl sm:text-3xl px-7 pb-20">
@@ -137,64 +130,9 @@
                     Meals
                 </h1>
 
-                <div
+                <div id="meals-container"
                     class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-1 sm:gap-6 sm:grid-cols-2">
-                    <div
-                        class="border cursor-pointer overflow-hidden max-w-80 mx-auto shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)] bg-white pb-5 flex-col rounded-lg flex items-center justify-center">
-                        <div class="w-full">
-                            <a href="./product-detail.html">
-                                <img class="w-full h-full object-cover" loading="lazy" src="/assets/images/img-2.jpg" alt="An image of Beef and Mustard pie" />
-                            </a>
-                        </div>
-                        <div class="text-black text-lg">
-                            Beef and Mustard Pie
-                        </div>
-                    </div>
-                    <div
-                        class="border overflow-hidden max-w-80 mx-auto shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)] bg-white pb-5  flex-col rounded-lg flex items-center justify-center">
-                        <div class="w-full">
-                            <img class="w-full h-full object-cover" src="/assets/images/img-1.jpg" loading="lazy" alt="" />
-                        </div>
-                        <div class="text-black text-lg">
-                            Beef and Oyster Pie
-                        </div>
-                    </div>
-                    <div
-                        class="border overflow-hidden max-w-80 mx-auto shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)] bg-white pb-5  flex-col rounded-lg flex items-center justify-center">
-                        <div class="w-full">
-                            <img class="w-full h-full object-cover" src="/assets/images/img-2.jpg" loading="lazy" alt="" />
-                        </div>
-                        <div class="text-black text-lg">
-                            Beef and Mustard Pie
-                        </div>
-                    </div>
-                    <div
-                        class="border overflow-hidden max-w-80 mx-auto shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)] bg-white pb-5  flex-col rounded-lg flex items-center justify-center">
-                        <div class="w-full">
-                            <img class="w-full h-full object-cover" src="/assets/images/img-3.jpg" loading="lazy" alt="" />
-                        </div>
-                        <div class="text-black text-lg">
-                            Beef and Mustard Pie
-                        </div>
-                    </div>
-                    <div
-                        class="border overflow-hidden max-w-80 mx-auto shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)] bg-white pb-5  flex-col rounded-lg flex items-center justify-center">
-                        <div class="w-full">
-                            <img class="w-full h-full object-cover" src="/assets/images/img-5.jpg" loading="lazy" alt="" />
-                        </div>
-                        <div class="text-black text-lg">
-                            Beef and Mustard Pie
-                        </div>
-                    </div>
-                    <div
-                        class="border overflow-hidden max-w-80 mx-auto shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)] bg-white pb-5  flex-col rounded-lg flex items-center justify-center">
-                        <div class="w-full">
-                            <img class="w-full h-full object-cover" src="/assets/images/img-6.jpg" loading="lazy" alt="" />
-                        </div>
-                        <div class="text-black text-lg">
-                            Beef and Mustard Pie
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
