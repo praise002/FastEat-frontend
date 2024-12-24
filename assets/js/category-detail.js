@@ -21,7 +21,7 @@ if (categoryId && categoryName) {
 
     const data2 = await api.getMealsByCategory(categoryName);
     const meals = data2.meals;
-    
+
     displayCategoryDetail(category);
     displayMeals(meals);
 }
@@ -76,7 +76,7 @@ function displayCategoryDetail(category) {
 function displayMeals(meals) {
     const mealsContainer = document.querySelector("#meals-container");
 
-    meals.forEach((meal) => {
+    meals.map((meal) => {
         const mealElement = `
           <div id="meal-${meal.idMeal}"
             class="border cursor-pointer overflow-hidden max-w-80 mx-auto shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)] bg-white pb-5 flex-col rounded-lg flex items-center justify-center">

@@ -67,8 +67,9 @@ function displayMealDetail(meal) {
         .split("\r\n")
         .filter((instruction) => instruction.trim() !== "")
         .map((instruction) => instruction.replace(/^\d+\.\s*/, ""));
-    console.log(instructions);
 
+    document.querySelector("#meal-paragraph").textContent = meal.strMeal;
+    
     const mealDetailElement = `
         <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-10">
                     <div class="max-w-2xl">
@@ -197,7 +198,7 @@ function displayMealDetail(meal) {
 function displayCategories(categories) {
     const categoryContainer = document.querySelector("#category-container");
 
-    categories.forEach((category) => {
+    categories.map((category) => {
         const categoryElement = `
         <div id="category-${category.idCategory}" class="relative bg-white h-full w-full flex items-center justify-center">
           <a href="./category-detail.html?name=${category.strCategory}&id=${category.idCategory}"><img loading="lazy"
@@ -213,4 +214,3 @@ function displayCategories(categories) {
         categoryContainer.insertAdjacentHTML("afterbegin", categoryElement);
     });
 }
-

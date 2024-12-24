@@ -23,7 +23,7 @@ displayCategories(data.categories);
 function displayCategories(categories) {
     const categoryContainer = document.querySelector("#category-container");
 
-    categories.forEach((category) => {
+    categories.map((category) => {
         const categoryElement = `
         <div id="category-${category.idCategory}" class="relative bg-white h-full w-full flex items-center justify-center">
           <a href="./category-detail.html?name=${category.strCategory}&id=${category.idCategory}"><img loading="lazy"
