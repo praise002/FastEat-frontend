@@ -11,15 +11,13 @@ A modern recipe discovery platform featuring:
 Built using HTML5 and Tailwind CSS for a seamless user experience.
 
 ## Setup Instructions
-1. Clone the repository
-2. Install Tailwind css
-    ```bash 
-    npm install -D tailwindcss
-    npx tailwindcss init
-3. Build Tailwind css
-    ```bash 
-        npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch
-4. Run Live server
+1. **Clone the repository**
+2. **Install dependencies:**
+   ```sh 
+   npm install
+3. **Run the development server:**
+   ```sh 
+   npm start
 
 ## Home page
 <img src="./assets/images/search-page-fasteat.png">  

@@ -17,8 +17,10 @@
 // }
 import api from "./api.js";
 
-const data = await api.getCategories();
-displayCategories(data.categories);
+async function init() {
+    const data = await api.getCategories();
+    displayCategories(data.categories);
+}
 
 function displayCategories(categories) {
     const categoryContainer = document.querySelector("#category-container");
@@ -39,3 +41,5 @@ function displayCategories(categories) {
         categoryContainer.insertAdjacentHTML("afterbegin", categoryElement);
     });
 }
+
+init();

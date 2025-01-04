@@ -1,6 +1,6 @@
-node_modules
-package.json
-package-lock.json
-tailwind.config.js
+node_modules/
+.parcel-cache/
 assets/css/output.css
 note.txt
+.vscode
+dist/
